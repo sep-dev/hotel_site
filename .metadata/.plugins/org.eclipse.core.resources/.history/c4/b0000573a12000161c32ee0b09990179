@@ -1,0 +1,202 @@
+﻿html{
+    margin: 0;
+    margin-top:-20px;        
+    padding: 0;       
+    width:100%;
+    height:100%;
+}
+.top{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#contents {
+    top : 0px;
+    padding : 10px;
+    margin : 10px;
+    text-align : center;
+}
+
+#contents img{
+    padding-bottom:10px;
+}
+
+#contents button {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 10px 30px;
+    background-color: #200;
+    color: #ffffff;
+    border-style: none;
+}
+
+#table{
+    border:0;
+    background-color:#CCCCCC;
+    font-size:24px;
+    color:#666666;
+    width:200px;
+}
+
+#table3{
+    border:0;
+    background-color:#CCCCCC;
+    font-size:24px;
+    color:#666666;
+    width:200px;
+}
+
+/*--------calender----------*/
+#Sunday{
+    text-align:center;
+    width:200;
+    height:40;
+    background-color:#C7D8ED;
+    color:#FF3300;
+    padding:15px;
+}
+#MonFri{
+    text-align:center;
+    width:200;
+    background-color:#C7D8ED;
+    color:#666666;
+    padding:15px;
+}
+#Saturday{
+    text-align:center;
+    width:200;
+    background-color:#C7D8ED;
+    color:#666666;
+    padding:15px;
+}
+#Saturday2{
+    text-align:center;
+    width:200;
+    background-color:#A6C0E1;
+    color:#666666;
+}
+#Sunday2{
+    text-align:center;
+    height:40;
+    background-color:#FFCC99;
+    color:#666666;
+}
+#Weekday{
+    text-align:center;
+    background-color:#FFFFFF;
+    color:#666666;
+    width:200;
+}
+#publicholiday{
+    text-align:center;
+    background-color:#FF3300;
+    color:#FFFFFF;
+}
+#table2 tr td{
+    border:0;
+    font-size:24px;
+    color:#666666;
+    width:400px;
+}
+#float{
+    float:left;
+}
+/* --------------------------------------*/
+
+#header {
+    top: 0px;
+    left: 0px;
+    height: 75px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align : center;
+    background-color : #3A0101;
+    
+}
+#header h1{
+    padding-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+ 	color:#ffffff;
+}
+
+
+#top{
+    font-size: 200%;
+}
+
+#oneset{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	border-width: thick;
+	border-color: #999AAA;
+	border-style: ridge;
+}
+#name
+{
+    text-align: center; 
+	font-size: 150%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    background-color: #999AAA;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+#message{
+	color: #000000;
+    padding-left: 300px;
+	font-size: 150%;
+	
+	text-align: left; margin-left: 100px; margin-right: 0px; width: 1000px;
+}
+
+
+/*---------入力フォーム----------*/
+
+#reservation{
+    
+    padding-top: 20px;
+    margin-bottom:50px;
+    font-family: 'Times New Roman', Times, serif;
+ 	color:#000000;
+}
+
+#form{
+    margin-top:30px
+    
+}
+
+
+button.button2 {
+    float:right;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 30px 20px;
+    background-color: #3A0101;
+    color: #ffffff;
+    border-style: none;
+    font-family: 'Times New Roman', Times, serif;
+    box-shadow:4px 4px #555;
+}
+
+/*
+footer ------------------------------------------------------*/
+
+#footer {
+    margin-top:30px;
+    border-top:3px solid #3A1010;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+#footer p{
+    text-align:center;
+}
+#footer p a{
+    text-decoration: none;
+}
+#footborder hr{
+    border-color:#3A1010;
+    border-width:1px;
+}
