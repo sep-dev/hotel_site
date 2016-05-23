@@ -12,8 +12,6 @@ public class HomeController {
 	public ModelAndView home(){
 		ModelAndView modelAndView = new ModelAndView("home");
 
-		modelAndView.addObject("","");
-
 		return modelAndView;
 	}
 

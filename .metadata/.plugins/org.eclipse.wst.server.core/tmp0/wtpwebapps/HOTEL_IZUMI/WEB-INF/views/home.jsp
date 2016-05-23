@@ -15,10 +15,10 @@
 </div>
 
 <div id="contents">
-<img src="/resources/image/top.jpg" width="900px" height="750px" alt="HotelIZUMI" class="top">
+<img src="./resources/image/top.jpg" width="900px" height="750px" alt="HotelIZUMI" class="top">
 
-<button class="button1" type="buttton" onclick="location.href='general.html'">一般ルーム</button>
-<button class="button1" type="buttton" onclick="location.href='vip.html'">VIPルーム</button>
+<button type="buttton" class="button1" onclick="location.href='general.html'" >一般ルーム</button>
+<button type="buttton" class="button1" onclick="location.href='vip.html'" >VIPルーム</button>
 </div>
 <div id="footer">
     <hr>
