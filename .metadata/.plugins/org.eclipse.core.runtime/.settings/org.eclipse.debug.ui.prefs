@@ -3,5 +3,8 @@ Console.highWaterMark=88000
 eclipse.preferences.version=1
 org.eclipse.debug.ui.PREF_LAUNCH_PERSPECTIVES=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\r\n<launchPerspectives/>\r\n
 org.eclipse.debug.ui.UseContextualLaunch=false
+<<<<<<< HEAD
 org.eclipse.debug.ui.save_dirty_editors_before_launch=never
+=======
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 preferredTargets=default\:default|

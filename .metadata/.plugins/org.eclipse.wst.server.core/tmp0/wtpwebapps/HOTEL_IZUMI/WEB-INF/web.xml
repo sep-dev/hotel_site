@@ -31,6 +31,22 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
+<<<<<<< HEAD
+=======
+
+	<!-- jsp ヘッダー共通部分 -->
+	<jsp-config>
+		<jsp-property-group>
+			<url-pattern>*.jsp</url-pattern>
+			<el-ignored>false</el-ignored>
+			<page-encoding>UTF-8</page-encoding>
+			<scripting-invalid>false</scripting-invalid>
+			<include-prelude>/WEB-INF/views/common/header.jsp</include-prelude>
+		</jsp-property-group>
+	</jsp-config>
+
+	<!-- フィルターの適応 -->
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -40,7 +56,11 @@
 		</init-param>
 		<init-param>
 			<param-name>forceEncoding</param-name>
+<<<<<<< HEAD
 			<param-value>true</param-value>
+=======
+		<param-value>true</param-value>
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 		</init-param>
 	</filter>
 	<filter-mapping>
@@ -48,4 +68,8 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 </web-app>

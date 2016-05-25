@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+<<<<<<< HEAD
 	<item value="C:\Users\urawakikosuke\.m2\repository\mysql\mysql-connector-java\5.1.35" key="org.eclipse.jdt.ui.lastextjar"/>
+=======
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="1" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -8,6 +11,7 @@
 		<item value="1" key="rootMode"/>
 		<item value="false" key="linkWithEditor"/>
 	</section>
+<<<<<<< HEAD
 	<section name="org.eclipse.jdt.internal.ui.wizards.buildpaths.NewVariableEntryDialog">
 		<item value="1024" key="DIALOG_WIDTH"/>
 		<item value="1|メイリオ|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|メイリオ" key="DIALOG_FONT_NAME"/>
@@ -35,6 +39,10 @@
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>
 	</section>
+=======
+	<section name="quick_assist_proposal_size">
+	</section>
+>>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
 	<section name="completion_proposal_size">
 	</section>
 	<section name="JavaElementSearchActions">
