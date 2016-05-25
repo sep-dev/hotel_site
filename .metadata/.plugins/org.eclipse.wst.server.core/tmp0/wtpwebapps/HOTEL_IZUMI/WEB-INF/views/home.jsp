@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>
-	Default Project
+	Default Hello
  </h1>
 
 </body>
