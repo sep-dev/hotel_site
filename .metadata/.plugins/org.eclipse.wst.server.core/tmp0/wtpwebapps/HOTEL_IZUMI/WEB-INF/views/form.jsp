@@ -1,3 +1,7 @@
+
+
+
+
 <!DOCTYPE html>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
@@ -13,87 +17,92 @@ String dateA=null;
 %>
 
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
-        <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
-        <title>お客様情報の入力</title>
-    </head>
-    <body>
-    <style type="text/css"><%@include file="../css/style.css" %></style>
-
-  <!--   <form:form modelAttribute="formModel"> -->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <style type="text/css"><%@include file="../css/style.css" %>
+      input.button2{
+        font-size: 1.4em;
+        font-weight: bold;
+        padding: 30px 20px;
+        background-color: #3A0101;
+        color: #ffffff;
+        border-style: none;
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow:4px 4px #555;
+      }
+    </style>
+    <title>お客様情報の入力</title>
+  </head>
+  <body>
     <div id="header">
       <div id="header h1"><h1><a HREF="http://localhost:8080/Izumi/top" STYLE="text-decoration:none"><font color="#FFFFFF">HOTEL&nbsp;&nbsp;&nbsp;IZUMI</font></a></h1></div>
     </div>
-<form:form modelAttribute="formModel" name="form" id="form" >
-    <input type="hidden" name="mcode" value="UTF-8">
+    <form:form modelAttribute="formModel" name="form" id="form"  >
+      <input type="hidden" name="mcode" value="UTF-8">
 
-<%
-    Connection con = null;
-    Statement stmt = null;
-    ResultSet rs = null;
-    try {
-      con = DriverManager.getConnection("jdbc:mysql://localhost/hotel","root","e78jOn6L");
-      stmt = con.createStatement();
-      rs =stmt.executeQuery("select * from hotel.tbroom");
-      while(rs.next()) {
-        id=rs.getInt(1);
-        Integer ida =new Integer(id);
-        String idb =ida.toString();
-        String date =rs.getString(2);
-        String room =rs.getString(3);
-        Wdate=date;
-        Wroom=room;
+      <%
+      Connection con = null;
+      Statement stmt = null;
+      ResultSet rs = null;
+      try {
+        con = DriverManager.getConnection("jdbc:mysql://localhost/hotel","root","e78jOn6L");
+        stmt = con.createStatement();
+        rs =stmt.executeQuery("select * from hotel.tbroom");
+        while(rs.next()) {
+          id=rs.getInt(1);
+          Integer ida =new Integer(id);
+          String idb =ida.toString();
+          String date =rs.getString(2);
+          String room =rs.getString(3);
+          Wdate=date;
+          Wroom=room;
+        }
       }
-    }
-    catch (Exception e) {
-      System.out.println("データベース接続エラー"+ e);
-    }
+      catch (Exception e) {
+        System.out.println("データベース接続エラー"+ e);
+      }
 
-    year=Wdate.substring(0,2);
-    year="20"+year+"年";
-    month=Wdate.substring(2,4);
-    month=month+"月";
-    dateA=Wdate.substring(4,6);
-    dateA=dateA+"日";
+      year=Wdate.substring(0,2);
+      year="20"+year+"年";
+      month=Wdate.substring(2,4);
+      month=month+"月";
+      dateA=Wdate.substring(4,6);
+      dateA=dateA+"日";
+      %>
 
-%>
+      <p ID=reservation><% out.println(year+month+dateA);%></p>
 
-<p ID=reservation><% out.println(year+month+dateA);%></p>
+      <p>以下のフォームにご入力の上、「入力内容の確認画面へ」ボタンをクリックしてください。</p>
+      <p><font color="#ff0000">${member}${name1}${name2}${mail}${address}${error}</font></p>
 
-<p>以下のフォームにご入力の上、「入力内容の確認画面へ」ボタンをクリックしてください。</p>
-<p><font color="#ff0000">${error}</font></p>
+    <table>
+       <tr>
+         <th><label>ご利用人数</label></th>
+         <td></td>
+         <td><form:input path="input1" name="member" id="member" size="5" autocomplete="off" /> <span class="supplement" >名様</span><br>
+         </td>
+       </tr>
 
-<table>
-
-<tr>
-<th><label>ご利用人数</label></th>
-<td></td>
-<td><form:input path="input1" id="count" size="5" autocomplete="off" onblur="error(1)"/> <span class="supplement" >名様</span><br>
-
-</td>
-</tr>
-
-<tr>
-<th><label for="name1">ご依頼者名</label></th>
-<td></td>
-<td><form:input path="input2"  id="name1" size="50" autocomplete="off" onblur="error(2)" /><br>
-<span class="supplement">例） 田具 太郎</span></td>
-</tr>
+       <tr>
+         <th><label for="name1">ご依頼者名</label></th>
+         <td></td>
+         <td><form:input path="input2"  name="name1" id="name1" size="50" autocomplete="off" maxlength="15" /><br>
+         <span class="supplement">例） 田具 太郎</span></td>
+       </tr>
 
 <tr>
 <th><label for="name2">ご依頼者名 <span class="supplement">（フリガナ）</span></label></th>
 <td></td>
-<td><form:input path="input3" id="name2" size="50" autocomplete="off" onblur="error(3)"/><br>
+<td><form:input path="input3" name="name2" id="name2" size="50" autocomplete="off" maxlength="15" /><br>
 <span class="supplement">例） タグ タロウ</span></td>
 </tr>
 
 <tr>
-<th><label for="email">メールアドレス</label></th>
+<th><label for="mail">メールアドレス</label></th>
 <td></td>
-<td><form:input path="input4" id="email" size="50" autocomplete="off" onblur="error(4)"/> <span class="supplement">（半角英数字）</span><br>
+<td><form:input path="input4" name="mail" id="mail" size="50" autocomplete="off" /> <span class="supplement">（半角英数字）</span><br>
 <span class="supplement">ご入力間違いのないようにご注意ください</span>
-<button class="button2" type="submit" style="position: absolute; right: 10px;">入力内容の確認画面へ</button>
+
 </td>
 </tr>
 
@@ -106,7 +115,10 @@ String dateA=null;
 -->
 <tr>
 <th rowspan="3"><label>ご住所</label></th>
-<td class="arbitrary"></td>
+<td class="arbitrary">
+<!-- <input type="submit" value="入力内容の確認画面" style="position: absolute; left: 600px;" class="button2" formaction="http://localhost:8080/Izumi/confirmation">-->
+<button class="button2" type="submit" style="position: absolute; left: 600px;" onClick="button()" >入力内容の確認画面へ</button>
+</td>
 </tr>
 <tr>
 <td></td>
@@ -116,7 +128,7 @@ String dateA=null;
 <!-- <td><select name="prefecture" id="prefecture">  -->
 
 <td>
-<form:select path="input5"  id="prefecture" onblur="error(5)">
+<form:select path="input5"  name="prefecture" id="prefecture" >
 
 <option value="">都道府県の選択</option>
 <option value="北海道">北海道</option>
@@ -175,7 +187,7 @@ String dateA=null;
 <!--都道府県以下の住所入力-->
 <tr>
 <td class="arbitrary"></td>
-<td><form:input path="input6"  id="address" size="50" autocomplete="off" onblur="error(6)"/><br>
+<td><form:input path="input6" name="address" id="address" value=" " size="50" autocomplete="off" maxlength="40"/><br>
 <span class="supplement">例） 千代田区大手町1-2-3 ○○ビル10F</span></td>
 </tr>
 </tbody>
@@ -184,114 +196,81 @@ String dateA=null;
  <div id="button2">
   <input type="submit" class="button2" name="button" value="入力内容の確認" >
 </div> -->
-</form:form>
 
+</form:form>
 <script type="text/javascript">
-function error(num){
-  var str1=document.forms.form.count.value;
-  var str2=document.forms.form.name1.value;
-  var str3=document.forms.form.name2.value;
-  var str4=document.forms.form.email.value;
-  var str5=document.forms.form.prefecture.value;
-  var str6=document.forms.form.address.value;
-  switch(num){
-    case 1:
-      if((str1.match(/[^0-9]/g))||(str1>10)||(str1<1)){
-        alert ('1～10の数字を入力してください');
-        //document.forms.form.count.value="";
-        return false;
-      }
-      break;
-    case 2:
-      if(str2==""){
-        alert ('空白です。名前を入力してください');
-        //document.forms.form.name1.value="";
-        return false;
-      }
-      else if(str2.match(/[^一-龠々ぁ-んァ-ヶ 　]/g)){
-        alert ('ひらがな、カタカナ、漢字のみ入力してください');
-        //document.forms.form.name1.value="";
-        return false;
-      }
-      break;
-    case 3:
-      if(str3==""){
-        alert ('空白です。フリガナを入力してください');
-        //document.forms.form.name1.value="";
-        return false;
-      }
-      else if(str3.match(/[^ァ-ヶ 　]/g)){
-        alert ('カタカナのみ入力してください');
-        //document.forms.form.name2.value="";
-        return false;
-      }
-      break;
-    case 4:
-      if(str4==""){
-        alert ('空白です。メールアドレスを入力してください');
-        //document.forms.form.name1.value="";
-        return false;
-      }
-      else if(str4.match(/[^a-zA-Z0-9@._-]/g)){
-        alert ('半角英数字 @ , - _のみ入力してください');
-        //document.forms.form.email.value="";
-        return false;
-      }
-      break;
-    case 5:
-      if(str5==""){
-        alert ('都道府県を選択してください');
-        //document.forms.form.address.value="";
-        return false;
-      }
-      break;
-    case 6:
-      if(str5==""){
-        alert ('都道府県を選択してください');
-        if(str6==""){
-          alert ('空白です。住所を入力してください');
-          //document.forms.form.name1.value="";
-          return false;
-        }
-        else if(str6.match(/[^一-龠々ぁ-んァ-ヶa-zA-Z0-9-]/g)){
-          alert ('-以外の記号は入力できません');
-          //document.forms.form.address.value="";
-          return false;
-        }
-      }
-      else if(str5=="その他"){
-        return false;
-      }
-      else if(str6==""){
-        alert ('空白です。住所を入力してください');
-        //document.forms.form.name1.value="";
-        return false;
-      }
-      else if(str6.match(/[^一-龠々ぁ-んァ-ヶa-zA-Z0-9０-９-]/g)){
-        alert ('-以外の記号は入力できません');
-        //document.forms.form.address.value="";
-        return false;
-      }
+function button(){
+  str1=document.forms.form.member.value;
+  str2=document.forms.form.name1.value;
+  str3=document.forms.form.name2.value;
+  str4=document.forms.form.mail.value;
+  str5=document.forms.form.prefecture.value;
+  str6=document.forms.form.address.value;
+
+  str1=str1.replace(/[^1-9]/,"");
+  str2=str2.replace(/[^一-龠々ぁ-んァ-ヶ 　]/,"");
+  str3=str3.replace(/[^ァ-ヶ 　]/,"");
+  str4=str4.replace(/[^a-zA-Z0-9@._-]+/,"");
+  str6=str6.replace(/[^一-龠々ぁ-んァ-ヶa-zA-Z0-9０-９-]+/,"");
+  str6=str6.replace(/(北海道)/,"");
+  str6=str6.replace(/(青森)/,"");
+  str6=str6.replace(/(岩手)/,"");
+  str6=str6.replace(/(宮城)/,"");
+  str6=str6.replace(/(秋田)/,"");
+  str6=str6.replace(/(山形)/,"");
+  str6=str6.replace(/(福島)/,"");
+  str6=str6.replace(/(東京)/,"");
+  str6=str6.replace(/(神奈川)/,"");
+  str6=str6.replace(/(埼玉)/,"");
+  str6=str6.replace(/(千葉)/,"");
+  str6=str6.replace(/(茨城)/,"");
+  str6=str6.replace(/(栃木)/,"");
+  str6=str6.replace(/(群馬)/,"");
+  str6=str6.replace(/(山梨)/,"");
+  str6=str6.replace(/(新潟)/,"");
+  str6=str6.replace(/(長野)/,"");
+  str6=str6.replace(/(富山)/,"");
+  str6=str6.replace(/(石川)/,"");
+  str6=str6.replace(/(福井)/,"");
+  str6=str6.replace(/(愛知)/,"");
+  str6=str6.replace(/(岐阜)/,"");
+  str6=str6.replace(/(静岡)/,"");
+  str6=str6.replace(/(三重)/,"");
+  str6=str6.replace(/(大阪)/,"");
+  str6=str6.replace(/(兵庫)/,"");
+  str6=str6.replace(/(京都)/,"");
+  str6=str6.replace(/(滋賀)/,"");
+  str6=str6.replace(/(奈良)/,"");
+  str6=str6.replace(/(和歌山)/,"");
+  str6=str6.replace(/(鳥取)/,"");
+  str6=str6.replace(/(島根)/,"");
+  str6=str6.replace(/(岡山)/,"");
+  str6=str6.replace(/(広島)/,"");
+  str6=str6.replace(/(山口)/,"");
+  str6=str6.replace(/(徳島)/,"");
+  str6=str6.replace(/(香川)/,"");
+  str6=str6.replace(/(愛媛)/,"");
+  str6=str6.replace(/(高知)/,"");
+  str6=str6.replace(/(福岡)/,"");
+  str6=str6.replace(/(佐賀)/,"");
+  str6=str6.replace(/(長崎)/,"");
+  str6=str6.replace(/(熊本)/,"");
+  str6=str6.replace(/(大分)/,"");
+  str6=str6.replace(/(宮崎)/,"");
+  str6=str6.replace(/(鹿児島)/,"");
+  str6=str6.replace(/(沖縄)/,"");
+
+  if((str1!="")&&(str2!="")&&(str3!="")&&(str4!="")){
+	if((str5=="その他")||((str5!="")&&(str6!=""))){
+      document.form.action = '/Izumi/confirmation';
+    }
   }
 }
-
 </script>
-
-
-
-<!--
-	  /*メールアドレス正規表現
-	  /^([a-zA-Z0-9_¥.¥-])+¥@(([a-zA-Z0-9¥-])+¥.)+([a-zA-Z0-9]{2,4})+$/
-      /^([a-zA-Z0-9])+([a-zA-Z0-9¥._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9¥._-]+)+$/
-      /^[A-Za-z0-9]+[¥w-]+@[¥w¥.-]+¥.¥w{2,}$/
-      /^[¥w_-]+@[¥w¥.-]+¥.¥w{2,}$/
-	  */
- -->
-
 
 <div id="footer">
           <p id="copyright">Copyright &copy;<a href="http://hotelizumi.com">hotelizumi</a> All Rights Reserved.</p>
         </div>
-    </form:form>
+
   </body>
 </html>

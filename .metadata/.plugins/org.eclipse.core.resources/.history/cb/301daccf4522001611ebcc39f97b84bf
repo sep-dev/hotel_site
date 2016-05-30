@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%
+String count = request.getParameter("count");
+String name1 = request.getParameter("name1");
+String name2 = request.getParameter("name2");
+String email = request.getParameter("email");
+String prefecture = request.getParameter("prefecture");
+String address = request.getParameter("address");
+
+session.setAttribute("count", count);
+session.setAttribute("name1", name1);
+session.setAttribute("name2", name2);
+session.setAttribute("email", email);
+session.setAttribute("prefecture", prefecture);
+session.setAttribute("address", address);
+
+
+%>
+<html>
+  <head>
+
+    <title>入力確認</title>
+
+  </head>
+  <body>
+  <style type="text/css"><%@include file="../css/style.css" %></style>
+  <div id="header">
+      <div id="header h1"><h1><a HREF="http://localhost:8080/Izumi/top" STYLE="text-decoration:none"><font color="#FFFFFF">HOTEL&nbsp;&nbsp;&nbsp;IZUMI</font></a></h1></div>
+    </div>
+　　<h3>入力確認</h3><br>
+
+　　　ご利用人数　　　　　${number}名様<br>
+    　　　ご依頼者名　　　　　${name1}<br>
+    ご依頼者名（フリガナ）　 ${name2}　<br>
+  　  　メールアドレス　　　　${mail}<br>
+    　　　　ご住所　　　　　　　${pre}${address}<br><br>
+
+    以上の内容でよろしいですか？
+　　<form>
+       <input type="button" value="はい" onClick='http://localhost:8080/springMVC/finish' >　
+       <input type="button" value="変更する" onClick=location.href="http://localhost:8080/Izumi/form">
+     </form>
+
+     ご利用人数 = <%= count %><br>
+     ご依頼者名 = <%= count %><br>
+     ご依頼者名（フリガナ） = <%= count %><br>
+     メールアドレス = <%= count %><br>
+     ご住所 = <%= prefecture %><%= address %><br>
+
+
+
+<div id="footer">
+    <p id="copyright">Copyright &copy;<a href="http://hotelizumi.com">hotelizumi</a> All Rights Reserved.</p>
+</div>
+  </body>
+</html>

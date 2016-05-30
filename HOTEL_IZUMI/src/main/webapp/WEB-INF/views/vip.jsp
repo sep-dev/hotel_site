@@ -4,27 +4,34 @@
 
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=Shift_JIS">
-<link href="<c:url value='/resources/css/style.css' />" rel="stylesheet">
-<!-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"> -->
+<!-- <link href="<c:url value='/resources/css/style.css' />" rel="stylesheet">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"> -->
+<style type="text/css">
+      div.example img {
+        margin: 0px 70px 0px 0px;
+      }
+      <%@include file="../css/style.css" %>
+    </style>
 <title>VIPルーム</title>
 </head>
 
 <body>
-<style type="text/css"><%@include file="../css/style.css" %></style>
+<form action="http://localhost:8080/Izumi/calender">
+
 
 <div id="header">
-      <div id="header h1"><h1><a HREF="http://localhost:8080/Izumi/top" STYLE="text-decoration:none"><font color="#FFFFFF">HOTEL&nbsp;&nbsp;&nbsp;IZUMI</font></a><img id="img" src="image/vip.jpg" widht="50%" height="70%" align="right"></h1></div>
+      <div id="header h1"><h1><a HREF="http://localhost:8080/Izumi/top" STYLE="text-decoration:none"><font color="#FFFFFF">HOTEL&nbsp;&nbsp;&nbsp;IZUMI</font></a><img id="img" src="./resources/image/vip.jpg" width="80" height="55" align="right"></h1></div>
     </div>
 
 
 
 
 <div id="oneset">
-<img src="image/vip1.jpg" widht="50%" height="50%" align="left">
+<img src="./resources/image/vip1.jpg" width="460" height="330" align="left">
     <p id="name">---ここに部屋名を入力---</p>
         <p id="RoomNB">【101号室】</p>
         <p id="message">---ここにメッセージを入力---</p>
-<table border>
+<table border="1">
 <tr>
     <td>広さ</td>
     <td>53㎡～56㎡</td>
@@ -42,18 +49,21 @@
     <td>テレビ、電話、冷蔵庫、アイロン、シャワー</td>
 </tr>
 </table>
-<img id="img" src="image/vip1_1.jpg" widht="100px" height="100px" align="left">
+ <div class="example">
+<img id="img" src="./resources/image/vip1_1.jpg" width="120px" height="90px" align="left">
+</div>
 <br>
-<button class="button1" type="submit">空室状況・予約</button>
+<button class="button2" type="submit" value="101" >空室状況・予約</button>
 <br clear="all">
+<br>
 </div>
 
 <div id="oneset">
-<img src="image/vip2.jpg" widht="50%" height="50%" align="left">
+<img src="./resources/image/vip2.jpg" width="460" height="330" align="left">
     <p id="name">---ここに部屋名を入力---</p>
         <p id="RoomNB">【102号室】</p>
         <p id="message">---ここにメッセージを入力---</p>
-<table border>
+<table border="1">
 <tr>
     <td>広さ</td>
     <td>53㎡～56㎡</td>
@@ -71,18 +81,21 @@
     <td>テレビ、電話、冷蔵庫、アイロン、シャワー</td>
 </tr>
 </table>
-<img id="img" src="image/vip2_2.jpg" widht="100px" height="100px" align="left">
+<div class="example">
+<img id="img" src="./resources/image/vip2_2.jpg" width="120px" height="90px" align="left">
+</div>
 <br>
-<button class="button1" type="submit">空室状況・予約</button>
+<button class="button2" type="submit" value="102" >空室状況・予約</button>
 <br clear="all">
+<br>
 </div>
 
 <div id="oneset">
-<img src="image/vip3.jpg" widht="50%" height="50%" align="left">
+<img src="./resources/image/vip3.jpg" width="460" height="330" align="left">
     <p id="name">---ここに部屋名を入力---</p>
         <p id="RoomNB">【103号室】</p>
         <p id="message">---ここにメッセージを入力---</p>
-<table border>
+<table border="1">
 <tr>
     <td>広さ</td>
     <td>53㎡～56㎡</td>
@@ -100,18 +113,21 @@
     <td>テレビ、電話、冷蔵庫、アイロン、シャワー</td>
 </tr>
 </table>
-<img id="img" src="image/vip3_3.jpg" widht="100px" height="100px" align="left">
+<div class="example">
+<img id="img" src="./resources/image/vip3_3.jpg" width="120px" height="90px" align="left">
+</div>
 <br>
-<button class="button1" type="submit">空室状況・予約</button>
+<button class="button2" type="submit" value="103" >空室状況・予約</button>
 <br clear="all">
+<br>
 </div>
 
 <div id="oneset">
-<img src="image/vip4.jpg" widht="50%" height="55%" align="left">
+<img src="./resources/image/vip4.jpg" width="460" height="330" align="left">
     <p id="name">---ここに部屋名を入力---</p>
         <p id="RoomNB">【104号室】</p>
         <p id="message">---ここにメッセージを入力---</p>
-<table border>
+<table border="1">
 <tr>
     <td>広さ</td>
     <td>53㎡～56㎡</td>
@@ -129,18 +145,21 @@
     <td>テレビ、電話、冷蔵庫、アイロン、シャワー</td>
 </tr>
 </table>
-<img id="img" src="image/vip4_4.jpg" widht="100px" height="100px" align="left">
+<div class="example">
+<img id="img" src="./resources/image/vip4_4.jpg" width="120px" height="90px" align="left">
+</div>
 <br>
-<button class="button1" type="submit">空室状況・予約</button>
+<button class="button2" type="submit" value="104" >空室状況・予約</button>
 <br clear="all">
+<br>
 </div>
 
 <div id="oneset">
-<img src="image/vip5.jpg" widht="50%" height="55%" align="left">
+<img src="./resources/image/vip5.jpg" width="460" height="330" align="left">
     <p id="name">---ここに部屋名を入力---</p>
         <p id="RoomNB">【105号室】</p>
         <p id="message">---ここにメッセージを入力---</p>
-<table border>
+<table border="1">
 <tr>
     <td>広さ</td>
     <td>53㎡～56㎡</td>
@@ -158,15 +177,18 @@
     <td>テレビ、電話、冷蔵庫、アイロン、シャワー</td>
 </tr>
 </table>
-<img id="img" src="image/vip5_5.jpg" widht="100px" height="100px" align="left">
+<div class="example">
+<img id="img" src="./resources/image/vip5_5.jpg" width="120px" height="90px" align="left">
+</div>
 <br>
-<button class="button1" type="submit">空室状況・予約</button>
+<button class="button2" type="submit" value="105" >空室状況・予約</button>
 <br clear="all">
+<br>
 </div>
 
 <div id="footer">
     <p id="copyright">Copyright &copy;<a href="http://hotelizumi.com">hotelizumi</a> All Rights Reserved.</p>
 </div>
-
+</form>
 </body>
 </html>

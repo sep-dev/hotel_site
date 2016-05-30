@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<html>
+  <head>
+    <style type="text/css"><%@include file="../css/style.css" %></style>
+    <title>入力確認</title>
+  </head>
+  <body>
+    <div id="header">
+      <div id="header h1"><h1><a HREF="http://localhost:8080/Izumi/top" STYLE="text-decoration:none"><font color="#FFFFFF">HOTEL&nbsp;&nbsp;&nbsp;IZUMI</font></a></h1></div>
+    </div>
+    <h3>入力確認</h3><br>
+
+　　　ご利用人数　　　　　${count}名様<br>
+    　　　ご依頼者名　　　　　${name1}<br>
+    ご依頼者名（フリガナ）　 ${name2}　<br>
+  　  　メールアドレス　　　　${email}<br>
+    　　　　ご住所　　　　　　　${prefecture}${address}<br><br>
+
+    以上の内容でよろしいですか？
+    <form>
+      <input type="submit" value="はい"  >　
+      <input type="button" value="変更する" onClick="location.href='http://localhost:8080/Izumi/form'">
+    </form>
+    <br>
+    ご利用人数 = ${Scount}<br>
+    ご依頼者名 = ${Sname1}<br>
+    ご依頼者名（フリガナ） = ${Sname2}<br>
+    メールアドレス = ${Semail}<br>
+    ご住所 = ${Sprefecture}${Saddress}<br>
+    <p>sessionID=<%= session.getId() %></p>
+    <% session.invalidate(); %>
+    <div id="footer">
+      <p id="copyright">Copyright &copy;<a href="http://hotelizumi.com">hotelizumi</a> All Rights Reserved.</p>
+    </div>
+  </body>
+</html>

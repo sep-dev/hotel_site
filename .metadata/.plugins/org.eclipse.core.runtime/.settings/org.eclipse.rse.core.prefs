@@ -1,4 +1,4 @@
-activeuserprofiles=D0010;Team
+activeuserprofiles=D0003;D0010;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=egashirasotaro
-useridperkey=D0010.\u30ED\u30FC\u30AB\u30EB\=egashirasotaro;
+useridperkey=D0003.\u30ED\u30FC\u30AB\u30EB\=egashirasotaro;D0010.\u30ED\u30FC\u30AB\u30EB\=egashirasotaro;

@@ -168,17 +168,7 @@
 }
 
 
-button.button2 {
-    float:right;
-    font-size: 1.4em;
-    font-weight: bold;
-    padding: 30px 20px;
-    background-color: #3A0101;
-    color: #ffffff;
-    border-style: none;
-    font-family: 'Times New Roman', Times, serif;
-    box-shadow:4px 4px #555;
-}
+
 
 /*
 footer ------------------------------------------------------*/

@@ -6,11 +6,8 @@
 </head>
 <body>
 <h1>
-<<<<<<< HEAD
-	Default Hello
-=======
-	Hello Wprld!!!
->>>>>>> b11862e7852a69d2a842bdd3ebcad3d5ffdaf7e3
+Default Hello
+
  </h1>
 
 </body>
